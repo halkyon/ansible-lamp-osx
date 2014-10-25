@@ -15,6 +15,7 @@ and run `/install.sh`.
 
 Some things to be done:
 
+ * Setup a database, maybe MariaDB
  * Install composer into /usr/local/bin
  * Set "decent" /etc/php.ini settings
  * Configure http://localhost to ~/Sites in Apache
