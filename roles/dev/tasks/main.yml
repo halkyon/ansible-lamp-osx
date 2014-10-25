@@ -1,0 +1,24 @@
+---
+- name: install dev packages
+  homebrew: name={{ item }} state=present
+  with_items:
+    - ack
+    - chromedriver
+    - mcrypt
+    - selenium-server-standalone
+
+- name: set php.ini error_reporting setting
+  sudo: yes
+  ini_file: dest=/etc/php.ini section=PHP option=error_reporting value=E_ALL
+
+- name: set php.ini display_errors setting
+  sudo: yes
+  ini_file: dest=/etc/php.ini section=PHP option=display_errors value=On
+
+- name: set php.ini display_startup_errors setting
+  sudo: yes
+  ini_file: dest=/etc/php.ini section=PHP option=display_startup_errors value=On
+
+- name: set php.ini date.timezone setting
+  sudo: yes
+  ini_file: dest=/etc/php.ini section=Date option=date.timezone value=Pacific/Auckland
